@@ -143,3 +143,22 @@ $('.quantity').each(function() {
     e.stopPropagation();
   });
   // End Dropdown
+
+  // Toggle Selected Node Children
+$('.ul-tree').on('click', 'p', function () {
+
+    $(this).siblings('ul').toggleClass('nodeToggle');
+    if ($(this).siblings('ul').length) {
+        $(this).toggleClass('nodeToggleSibling');
+    }
+
+});
+
+$('.ul-tree').on('click', 'i', function () {
+
+    if (!$(this).parent().siblings('ul').hasClass('nodeToggle')) {
+        $(this).parent().siblings('ul').toggleClass('nodeToggle');
+        $(this).parent().toggleClass('nodeToggleSibling');
+    }
+    
+});
