@@ -9,6 +9,30 @@ body{
   padding: 20px 0 0;
 }
 
+/* Start Custom Scroll */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(242, 245, 247, 1);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(226, 228, 234, 1);
+  border: 3px solid rgba(255, 255, 255, .9);
+  border-left: none;
+  border-right: none;
+  border-radius: 12px;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+	background-color: rgba(226, 228, 234, 0.5); 
+}
+
+/* End Custom Scroll */
+
 .wrapper{
   width: 90%;
   height: 600px;
