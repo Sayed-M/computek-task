@@ -27,6 +27,46 @@ $('#treeLevels').on('submit', function (e) {
 
 });
 
+// Circle Button to Add Columns or Sub-levels
+$('.ul-tree').on('click', 'i', function () {
+
+    // Check if the user added the max columns, and prevent adding new one
+    var ulCounted = $(this).parentsUntil('.ul-tree', 'ul').length;
+    ulCounted = ulCounted + 1;
+
+    if (ulCounted > selectedLevels) {
+        $(this).parent().addClass('boundary');
+        $(this).css('display', 'none');
+        
+        return alert('You reached the maximum selected amount of columns!');
+    }
+
+    // Append sub-levels
+    if ($(this).parent().parent().hasClass('ulAdded')) {
+
+        $(this).closest('.ulAdded').find('> ul').append(`
+            <li>
+                <p>New Item <i class="fa fa-plus"></i></p>
+            </li>
+        `);
+
+    } else {
+
+        // Append new columnns
+        $('.ul-tree ul').removeClass('lastUl');
+
+        $(this).parent().parent().addClass('ulAdded').append(`
+            <ul class="lastUl">
+                <li>
+                    <p>New Item <i class="fa fa-plus"></i></p>
+                </li>
+            </ul>
+        `);
+
+    }
+
+});
+
 // Start Dropdown
 $('.quantity').each(function() {
 
