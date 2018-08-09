@@ -1,3 +1,32 @@
+/*global $, console, alert*/
+var selectedLevels = 1,
+    nodeBoundary,
+    ulCounted;
+
+// On save the dropdown or pressing Enter
+// Save the entered quantity
+// Append the root node
+
+$('#treeLevels').on('submit', function (e) {
+    e.preventDefault();
+
+    var rootName = $('.inputs-wrapper input#root').val();
+
+    // Append the first root column
+    $('.ul-tree').append(`
+        <ul>
+            <li>
+            <p>${rootName} <i class="fa fa-plus"></i></p>
+            </li>
+        </ul>
+    `);
+
+    nodeBoundary = selectedLevels;
+
+    closeMenu();
+
+});
+
 // Start Dropdown
 $('.quantity').each(function() {
 
