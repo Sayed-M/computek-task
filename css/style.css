@@ -1,0 +1,398 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  box-sizing: content-box;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 20px 0 0;
+}
+
+.wrapper{
+  width: 90%;
+  height: 600px;
+  margin: 20px auto;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  overflow: auto;
+}
+
+.wrapper .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.wrapper .top .title-wrapper .title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.wrapper .top .controls .gear {
+  position: relative;
+}
+
+.wrapper .top .controls .gear i {
+  border: 2px solid #5871ff;
+  padding: 10px 15px;
+  font-size: 22px;
+  border-radius: 4px;
+  color: #737373;
+  cursor: pointer;
+}
+
+.wrapper .top .controls .gear .dropdown {
+  border-radius: 4px;
+  border: 1px solid #eee;
+  background: #FFF;
+  min-width: 290px;
+  position: absolute;
+  right: 0;
+  top: 55px;
+  padding: 20px 20px;
+  z-index: 9;
+
+  display: none;
+}
+
+.wrapper .top .controls .gear .dropdown::after {
+  position: absolute;
+    top: -6px;
+    right: 16px;
+    display: inline-block!important;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #fff;
+    border-left: 6px solid transparent;
+    border-bottom-color: #fff;
+    content: '';
+}
+
+.wrapper .top .controls .gear .dropdown::before {
+  position: absolute;
+  top: -7px;
+  right: 15px;
+  display: inline-block!important;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #eee;
+  border-left: 7px solid transparent;
+  border-bottom-color: #DDD;
+  content: '';
+
+}
+
+.wrapper .top .controls .gear .dropdown .top {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.wrapper .top .controls .gear .dropdown  .top .title-wrapper .title {
+  font-size: 16px;
+}
+
+.wrapper .top .controls .gear .dropdown .inputs-wrapper label {
+  display: block;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.wrapper .top .controls .gear .dropdown .inputs-wrapper input{
+  border: 1px solid #eee;
+  border-radius: 4px;
+  font-size: 17px;
+  padding: 10px;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.wrapper .top .controls .gear .dropdown .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+
+.wrapper .top .controls .gear .dropdown .buttons button {
+  border: 1px solid #5871ff;
+  border-radius: 4px;
+  padding: 10px 33px;
+  color: #5871ff;
+  font-weight: bold;
+  font-size: 16px;
+  background: none;
+  cursor: pointer;
+
+}
+
+.wrapper .top .controls .gear .dropdown .buttons button.save {
+  background: #5871ff;
+  color: #fff;
+}
+
+/* Start Quantity Input Style */
+
+.quantity {
+  position: relative;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+
+.quantity input {
+  font-size: 18px;
+  width: 80px;
+  height: 43px;
+  line-height: 1.65;
+  float: left;
+  display: block;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+  border: 3px solid #5871ff;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+.quantity-nav {
+  float: left;
+  position: relative;
+  height: 42px;
+}
+
+.quantity-button {
+  position: relative;
+  cursor: pointer;
+  width: 30px;
+  text-align: center;
+  background: #5871ff;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.7;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.quantity-button.quantity-up {
+  position: absolute;
+  height: 50%;
+  top: 0;
+}
+
+.quantity-button.quantity-down {
+  position: absolute;
+  bottom: 2px;
+  height: 50%;
+}
+
+/* End Quantity Input Style */
+
+/* Start Tree */
+
+.ul-tree {
+  padding: 0 25px;
+}
+
+.ul-tree.horizontal ul {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 1em;
+  list-style: none;
+}
+.ul-tree.horizontal ul:before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 0;
+  width: 1em;
+  border-top: 1px solid #999;
+}
+.ul-tree.horizontal li {
+  display: inline-block;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 0 0 1em;
+}
+.ul-tree.horizontal li:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-left: 1px solid #999;
+}
+.ul-tree.horizontal li:first-child:before {
+  top: 50%;
+}
+.ul-tree.horizontal li:last-child:before {
+  bottom: 50%;
+}
+.ul-tree.horizontal li p {
+  display: inline-block;
+  position: relative;
+  font-size: 17px;
+  color: #5973fc;
+  background-color: #fff;
+  border: 1px solid #5973fc;
+  border-radius: 4px;
+  margin: 1em 0;
+  padding: 10px 30px;
+  text-align: center;
+  cursor: pointer;
+}
+.ul-tree.horizontal li p:before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: -1em;
+  width: 1em;
+  border-top: 1px solid #999;
+}
+.ul-tree.horizontal > ul {
+  padding: 0;
+}
+.ul-tree.horizontal > ul:before {
+  display: none;
+}
+.ul-tree.horizontal > ul > li:before {
+  display: none;
+}
+.ul-tree.horizontal > ul > li > p:before {
+  display: none;
+}
+.ul-tree.horizontal.fixed p {
+  width: 7em;
+}
+.ul-tree.vertical ul {
+  position: relative;
+  margin: 0;
+  padding: 1em 0 0 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+.ul-tree.vertical ul:before {
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 0;
+  height: 1em;
+  border-left: 1px solid #999;
+}
+.ul-tree.vertical li {
+  display: inline-block;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 0 0 0;
+}
+.ul-tree.vertical li:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #999;
+}
+.ul-tree.vertical li:first-child:before {
+  left: 50%;
+}
+.ul-tree.vertical li:last-child:before {
+  right: 50%;
+}
+.ul-tree.vertical li p {
+  display: inline-block;
+  position: relative;
+  background-color: #eee;
+  border: 1px solid #999;
+  margin: 0 1em;
+  padding: 0.5em;
+  text-align: center;
+}
+.ul-tree.vertical li p:before {
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: -1em;
+  height: 1em;
+  border-left: 1px solid #999;
+}
+.ul-tree.vertical > ul {
+  padding: 0;
+}
+.ul-tree.vertical > ul:before {
+  display: none;
+}
+.ul-tree.vertical > ul > li:before {
+  display: none;
+}
+.ul-tree.vertical > ul > li > p:before {
+  display: none;
+}
+.ul-tree.vertical.fixed p {
+  width: 4em;
+  height: 5em;
+}
+
+.ul-tree p i {
+  position: absolute;
+  right: -13px;
+  top: 9px;
+  background: #39cc39;
+  color: #FFF;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 8;
+
+  display: none;
+}
+
+.ul-tree p:hover i {
+  display: block;
+}
+
+.ul-tree p i:hover {
+  background: #248a24;
+}
+
+ul.nodeToggle {
+  display: none;
+}
+
+.ul-tree p.nodeToggleSibling {
+  background-color: #5973fc !important;
+  color: #FFF !important;
+}
+
+.ul-tree p.boundary {
+  background-color: #FFF !important;
+  color: #5973fc !important;
+}
+
+/* End Tree */
